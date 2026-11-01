@@ -17,6 +17,7 @@ p {
     object-position: center;
 }
 
+
 .nav {
     display: flex;
     justify-content: center;
@@ -26,7 +27,7 @@ p {
 
 .rdv {
     width: 100%;
-    height: 450px;
+    height: 500px;
     object-fit: cover;
     object-position: center;
 }
@@ -38,16 +39,65 @@ p {
     margin-left: 670px;
 }
 
-/* Alignement et espacement propre du formulaire */
-.form_contact {
+/* Layout 2 colonnes pour la tournée */
+.tour-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espace automatique entre chaque champ */
-    max-width: 500px;
-    margin: 20px auto;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    margin-top: 100px;
+    padding: 0 15px;
+    flex-wrap: wrap; /* S'adapte sur mobile en passant l'un sous l'autre */
 }
 
-.form_contact textarea {
-    height: 120px;
-    resize: vertical; /* Permet à l'utilisateur d'agrandir le champ en hauteur */
+/* Colonne de gauche (Mise en avant) */
+.next-show-box {
+    flex: 1;
+    min-width: 280px;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.next-show-box .highlight-date {
+    font-size: 1.4em;
+    color: white;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.btn-ticket {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: rgb(242, 241, 245);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Colonne de droite (Liste complète) */
+.all-shows-box {
+    flex: 2;
+    min-width: 300px;
+}
+
+.all-shows-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.all-shows-box li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style pour les anciennes dates */
+.all-shows-box li.past {
+    opacity: 0.4; /* Dates passées plus sombres/visibles mais secondaires */
 }
